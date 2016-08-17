@@ -2,7 +2,7 @@ package sudoku;
 
 import java.util.BitSet;
 
-public class MyBitSet extends BitSet {
+public class MyBitSet extends BitSet implements Runnable {
 
 	private static final long serialVersionUID = 1637341559625599819L;
 	Integer isDuplicate = 0;
@@ -31,6 +31,25 @@ public class MyBitSet extends BitSet {
 		}
 		
 		return result;
+	}
+
+	@Override
+	public void run() {
+		
+		/*
+		 * nur eine Idee, wie kann ich Threads in Sudoku effektiv nutzen
+		 * baue myBitSet oder eine passendere Klasse soweit aus das es Sinnvoll als Thread seine Arbeit 
+		 * machen kann. Eine Idee währe das checkRow() checkCol() und checkBox() 
+		 * parallel erzeugt werden könnten. Derzeit nur seriell möglich.
+		 * Ich lerne stetig neue Aspekte von Java hinzu, derzeit bin ich noch nicht sicher alle 
+		 * relevanten Techniken zu kennen. Die letzte hier zum Zuge kommende Technologie habe ich 
+		 * erst gestern gelernt: Mit den Concurrent Locks ist es möglich einen
+		 * Lock auf eine Instanz auf das Lesen zu begrenzen, genauer: Ich kann mehreren Threads erlauben gleichzeitig 
+		 * Lesend auf einen Instanz zu zugreifen und gleichzeitig verhindern das schreibend 
+		 * auf dieses Objekt zugegriffen wird. Eigentlich Ideal für den Zugriff von 
+		 * checkRow() checkCol() und checkBox() auf die zugrunde liegenden Daten.    
+		 */
+ 
 	}
 	
 	

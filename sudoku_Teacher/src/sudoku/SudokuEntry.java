@@ -10,7 +10,7 @@ public class SudokuEntry {
 	}
 
 	public boolean setValue(Integer value) {
-		// prüft auf veränderlichen Eintag
+		// prüft auf veränderlichen Eintrag
 		boolean result = false;
 		if (!fix) {
 			this.value = value;

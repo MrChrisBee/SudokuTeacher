@@ -10,10 +10,9 @@ public class Spielfeld {
 	public MyBitSet[] rowVal = new MyBitSet[9];
 	public MyBitSet[] colVal = new MyBitSet[9];
 	public MyBitSet[] boxVal = new MyBitSet[9];
-	private String buchstabe = "abcdefghi";
+	private String buchstabe = "abcdefghi"; // für die Anzeige des Feldes res. Eingabe eines Zuges 
 
 	public Spielfeld(int spiel) {
-		super();
 		pa = new PuzzleArray(spiel);
 		for (int i = 0; i < 9; i++) {
 			boxVal[i] = new MyBitSet(9);
